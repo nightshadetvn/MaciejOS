@@ -11,6 +11,31 @@ namespace CosmosKernel1
         protected override void BeforeRun()
         {
             Console.Clear();
+          
+            Console.WriteLine("Nazwa uzytkownika : ");
+            string username = Console.ReadLine();
+            
+            
+            if (username != "maciej")
+            {
+                Sys.Power.Shutdown();                
+            }
+            else
+            Console.WriteLine("Haslo :");
+            string password = Console.ReadLine();
+            if (password != "os")
+            {
+                BeforeRun();
+                Sys.Power.Shutdown();
+            }
+            else
+                Console.WriteLine("Zalogowany!");
+
+
+        }
+
+        protected override void Run()
+        {
             string splash = @"
 .___  ___.      ___       ______  __   _______        __       ______        _______.
 |   \/   |     /   \     /      ||  | |   ____|      |  |     /  __  \      /       |
@@ -20,29 +45,9 @@ namespace CosmosKernel1
 |__|  |__| /__/     \__\ \______||__| |_______| \______/      \______/  |_______/    
                                                                                      
 ";
-            Console.WriteLine("Nazwa uzytkownika : ");
-            string username = Console.ReadLine();
-            if (username == "maciej")
-            {
-                Console.WriteLine("Haslo :");
-                string password = Console.ReadLine();
-                if (password == "os")
-                {
-                    Console.WriteLine(splash);
-                    Console.WriteLine("Zalogowany!");
-                }
-                else
-                    Console.WriteLine("Zle haslo");
-            }
-            else
-                Console.WriteLine("Zla nazwa uzytkownika");
-
-        }
-
-        protected override void Run()
-        {
             string input = "";
 
+            Console.WriteLine(splash);
             Console.WriteLine("MaciejOS >");
             input = Console.ReadLine();
 
