@@ -20,7 +20,23 @@ namespace CosmosKernel1
 |__|  |__| /__/     \__\ \______||__| |_______| \______/      \______/  |_______/    
                                                                                      
 ";
-            Console.WriteLine(splash);
+            Console.WriteLine("Nazwa uzytkownika : ");
+            string username = Console.ReadLine();
+            if (username == "maciej")
+            {
+                Console.WriteLine("Haslo :");
+                string password = Console.ReadLine();
+                if (password == "os")
+                {
+                    Console.WriteLine(splash);
+                    Console.WriteLine("Zalogowany!");
+                }
+                else
+                    Console.WriteLine("Zle haslo");
+            }
+            else
+                Console.WriteLine("Zla nazwa uzytkownika");
+
         }
 
         protected override void Run()
@@ -64,6 +80,7 @@ namespace CosmosKernel1
                 System.Threading.Thread.Sleep(5000);
                 Sys.Power.Reboot();
             }
+            else if(input == "")
             Console.WriteLine("");
         }
        }
