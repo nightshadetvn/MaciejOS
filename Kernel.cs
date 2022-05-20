@@ -10,6 +10,15 @@ namespace CosmosKernel1
 
         protected override void BeforeRun()
         {
+            string splash = @"
+.___  ___.      ___       ______  __   _______        __       ______        _______.
+|   \/   |     /   \     /      ||  | |   ____|      |  |     /  __  \      /       |
+|  \  /  |    /  ^  \   |  ,----'|  | |  |__         |  |    |  |  |  |    |   (----`
+|  |\/|  |   /  /_\  \  |  |     |  | |   __|  .--.  |  |    |  |  |  |     \   \    
+|  |  |  |  /  _____  \ |  `----.|  | |  |____ |  `--'  |    |  `--'  | .----)   |   
+|__|  |__| /__/     \__\ \______||__| |_______| \______/      \______/  |_______/    
+                                                                                     
+";
             Console.Clear();
           
             Console.WriteLine("Nazwa uzytkownika : ");
@@ -29,6 +38,7 @@ namespace CosmosKernel1
                 Sys.Power.Shutdown();
             }
             else
+                Console.WriteLine(splash);
                 Console.WriteLine("Zalogowany!");
 
 
@@ -36,18 +46,9 @@ namespace CosmosKernel1
 
         protected override void Run()
         {
-            string splash = @"
-.___  ___.      ___       ______  __   _______        __       ______        _______.
-|   \/   |     /   \     /      ||  | |   ____|      |  |     /  __  \      /       |
-|  \  /  |    /  ^  \   |  ,----'|  | |  |__         |  |    |  |  |  |    |   (----`
-|  |\/|  |   /  /_\  \  |  |     |  | |   __|  .--.  |  |    |  |  |  |     \   \    
-|  |  |  |  /  _____  \ |  `----.|  | |  |____ |  `--'  |    |  `--'  | .----)   |   
-|__|  |__| /__/     \__\ \______||__| |_______| \______/      \______/  |_______/    
-                                                                                     
-";
+
             string input = "";
 
-            Console.WriteLine(splash);
             Console.WriteLine("MaciejOS >");
             input = Console.ReadLine();
 
@@ -85,7 +86,10 @@ namespace CosmosKernel1
                 System.Threading.Thread.Sleep(5000);
                 Sys.Power.Reboot();
             }
-            else if(input == "")
+            else if(input == "logout")
+            {
+                BeforeRun();
+            }
             Console.WriteLine("");
         }
        }
