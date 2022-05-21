@@ -8,6 +8,16 @@ namespace CosmosKernel1
     public class Kernel : Sys.Kernel
     {
 
+        public String usernameValue()
+        {
+            return "maciej";
+        }
+
+        public String passwordValue()
+        {
+            return "os";
+        }
+
         protected override void BeforeRun()
         {
             string splash = @"
@@ -22,19 +32,24 @@ namespace CosmosKernel1
             Console.Clear();
           
             Console.WriteLine("Nazwa uzytkownika : ");
-            string username = Console.ReadLine();
+            string username = usernameValue();
+            string inputusername = Console.ReadLine();
             
             
-            if (username != "maciej")
+            
+            if (inputusername != username)
             {
                 Sys.Power.Shutdown();                
             }
             else
             Console.WriteLine("Haslo :");
-            string password = Console.ReadLine();
-            if (password != "os")
+
+            
+            string inputpassword = Console.ReadLine();
+            string password = passwordValue();
+
+            if (inputpassword != password)
             {
-                BeforeRun();
                 Sys.Power.Shutdown();
             }
             else
@@ -57,6 +72,8 @@ namespace CosmosKernel1
 
         private void CommandHandler(string input)
         {
+            string username = usernameValue();
+            string password = passwordValue();
             if (input == "help")
             {
                 Console.WriteLine("help - pokazuje ci te strone");
@@ -89,6 +106,10 @@ namespace CosmosKernel1
             else if(input == "logout")
             {
                 BeforeRun();
+            }
+            else if(input == "whoami")
+            {
+                Console.WriteLine(username);
             }
             Console.WriteLine("");
         }
