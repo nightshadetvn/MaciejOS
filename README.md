@@ -1,6 +1,6 @@
-## THIS BRANCH CAN BREAK YOUR PC, USE VMWARE.
+# THIS BRANCH CAN BREAK YOUR PC, USE VMWARE.
 
-# MaciejOS 
+## MaciejOS 
 
 ![image](https://user-images.githubusercontent.com/46790388/169589770-92963e64-159a-4f46-8cc5-86cadd409466.png)
 
