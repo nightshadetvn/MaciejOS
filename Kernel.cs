@@ -81,7 +81,9 @@ namespace CosmosKernel1
                 Console.WriteLine("restart - restartuje twoj komputer z 5 sec opoznieniem");
                 Console.WriteLine("clear - wyczysca terminal");
                 Console.WriteLine("echo - powtarza twoja wiadomosc po komendzie");
-                
+                Console.WriteLine("whoami - pokazuje na jakim koncie jestes");
+
+
             }
             else if (input == "shutdown")
             {
